@@ -1,0 +1,5 @@
+.player-card{
+    display:inline-block;
+    border: 1px solid black;
+    background-image: src = "http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/";
+}
