@@ -19,27 +19,43 @@
     <div class="container">
         <div class="panel">
             <h3>My NFL Roster</h3>
-            <div class="player-roster">
+            <div id="player-roster">
                 <div class="player-card">
-
+                    <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
+                    <h4>Players Name: </h4>
+                    <h5>Position: </h5>
+                    <h5>Team: </h5>
                 </div>
             </div>
-            <div class="my-team">
+            <div id="my-team">
 
-            </div>
+            <div class="panel">
+                <h2>Add Player</h2>
 
-
+            <form class="form-inline center search-bar" onsubmit="app.controllers.playersContoller.getPlayersByTeam(event)">
+                <label for="team-name">Team Name:</label>
+                <input type="team-name" class="form-control" name="team-name">
+            </form>
+            <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getPlayersByPosition(event)">
+                <label for="position">Player Position:</label>
+                <input type="position" class="form-control" name="position">
+            </form>
+            <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getlayerByName(event)">
+                <label for="name">Player Name:</label>
+                <input type="name" class="form-control" name="name">
+            </form>
+            <button type="submit" class="btn btn-default">Get Players
+            </button>
         </div>
+    </div>
+    </div>
     </div>
     <footer>
 
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-    <script src="roster-service.js"></script>
-
-    <script src="roster-controller.js"></script>
-
+    <script src="players-service.js"></script>
+    <script src="players-controller.js"></script>
     <script src="app.js"></script>
 </body>
 
