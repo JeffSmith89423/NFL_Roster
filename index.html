@@ -17,38 +17,43 @@
 
     </header>
     <div class="container">
+        <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getPlayersByTeam(event)">
+            <label for="team-name">Team Name:</label>
+            <input type="text" class="form-control" name="teamName">
+            <button type="submit" class="btn btn-default">Get Players By Team
+            </button>
+        </form>
+        <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getPlayersByTeam(event)">
+            <label for="team-name">Position:</label>
+            <input type="text" class="form-control" name="teamName">
+            <button type="submit" class="btn btn-default">Get Players By Position
+            </button>
+        </form>
+        <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getPlayersByTeam(event)">
+            <label for="team-name">Players First Name:</label>
+            <input type="text" class="form-control" name="teamName">
+            <button type="submit" class="btn btn-default">Get Players By First Name
+            </button>
+        </form>
         <div class="panel">
-            <h3>My NFL Roster</h3>
-            <div id="player-roster">
+            <div id="myteam">
+
+                <div class="panel">
+                    <h2>My Team</h2>
+
+                </div>
+            </div>
+            <h3>NFL Roster</h3>
+            <div id="playerRoster">
                 <!-- <div class="player-card">
                     <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
                     <h4>Players Name: </h4>
                     <h5>Position: </h5>
                     <h5>Team: </h5>
+                    <button type="submit" class"btn btn-default">Add</button>
                 </div> -->
             </div>
-            <div id="my-team">
-
-            <div class="panel">
-                <h2>Add Player</h2>
-
-            <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getPlayersByTeam(event)">
-                <label for="team-name">Team Name:</label>
-                <input type="text" class="form-control" name="teamName">
-                <button type="submit" class="btn btn-default">Get Players By Team
-                </button>
-            </form>
-            <!-- <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getPlayersByPosition(event)">
-                <label for="position">Player Position:</label>
-                <input type="text" class="form-control" name="position">
-            </form>
-            <form class="form-inline center search-bar" onsubmit="app.controllers.playersController.getlayerByName(event)">
-                <label for="name">Player Name:</label>
-                <input type="text" class="form-control" name="name">
-            </form> -->
         </div>
-    </div>
-    </div>
     </div>
     <footer>
 

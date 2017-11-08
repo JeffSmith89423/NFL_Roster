@@ -1,11 +1,11 @@
 var PlayersService = function (endpointUri, callback) {
     var playersData = [];
 
-    var filteredPlayers = playersData.filter(function (players) {
-        if (playersData.pro_team === "SF") {
-            return true;
-        }
-    });
+    // var filteredPlayers = playersData.filter(function (players) {
+    //     if (playersData.pro_team === "SF") {
+    //         return true;
+    //     }
+    // });
 
 
     // function Player(firstname, position, pro_team)
@@ -14,9 +14,20 @@ var PlayersService = function (endpointUri, callback) {
     //  this.pro_team = pro_team
 
     this.getPlayersByTeam = function (teamName) {
-console.log(teamName)
-       
+        return playersData.filter(function (player) {
+            if (player.pro_team === teamName) {
+                return true;
+            }
+        });
     }
+
+    //     console.log(filteredPlayers);
+
+    //     for (var i = 0; i < playersData.length; i++) {
+    //         var player = playersData.pro_team[i];
+    //     }
+    //     console.log(teamName)
+    // }
 
     this.getPlayersByPosition = function (position) {
         // JSON.parse(JSON.stringify(playersData.position))
@@ -42,7 +53,7 @@ console.log(teamName)
         if (localData) {
             playersData = JSON.parse(localData);
             console.log(playersData)
-            return callback();
+            return callback(playersData);
 
         }
 
@@ -56,7 +67,7 @@ console.log(teamName)
             console.log('Writing Player Data to localStorage')
             localStorage.setItem('playersData', JSON.stringify(playersData))
             console.log('Finished Writing Player Data to localStorage')
-            callback()
+            callback(playersData)
         });
     }
     loadPlayersData(); //call the function above every time we create a new service
