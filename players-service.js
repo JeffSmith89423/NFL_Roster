@@ -1,9 +1,7 @@
 var PlayersService = function (endpointUri, callback) {
     var playersData = [];
     var myTeam = [];
-   
-
-    
+    console.log(myTeam)
 
     this.getPlayersByTeam = function (teamName) {
         return playersData.filter(function (player) {
@@ -26,12 +24,22 @@ var PlayersService = function (endpointUri, callback) {
             }
         });
     }
-    this.addToMyTeam = function () {
-        
+    this.addPlayer = function addPlayer(id) {
+        for (var i = 0; i < playersData.length; i++) {
+            var player = playersData[i];
+            if (player.id == id) {
+                myTeam.push(player)
+            }
+        }
     }
 
-    this.removeFromMyTeam = function () {
-
+    this.removePlayer = function removePlayer(id) {
+        for (var j = 0; j < myTeam.length; j++) {
+            var player = myTeam[j];
+            if (player.id == id) {
+                myTeam.splice(j, 1)
+            }
+        }
     }
     function loadPlayersData() {
         var localData = localStorage.getItem('playersData');
@@ -55,5 +63,5 @@ var PlayersService = function (endpointUri, callback) {
             callback(playersData)
         });
     }
-    loadPlayersData(); //call the function above every time we create a new service
+    loadPlayersData();
 } 
