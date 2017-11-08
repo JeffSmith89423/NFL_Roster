@@ -21,20 +21,22 @@ var PlayersService = function (endpointUri, callback) {
         });
     }
 
-    //     console.log(filteredPlayers);
-
-    //     for (var i = 0; i < playersData.length; i++) {
-    //         var player = playersData.pro_team[i];
-    //     }
-    //     console.log(teamName)
-    // }
+    
 
     this.getPlayersByPosition = function (position) {
-        // JSON.parse(JSON.stringify(playersData.position))
+        return playersData.filter(function (player) {
+            if (player.position === position) {
+                return true;
+            }
+        });
     }
 
     this.getPlayersByName = function (firstname) {
-        // JSON.parse(JSON.stringify(playersData.firstname))
+        return playersData.filter(function (player) {
+            if (player.firstname === firstname) {
+                return true;
+            }
+        });
     }
 
     this.addToMyTeam = function () {

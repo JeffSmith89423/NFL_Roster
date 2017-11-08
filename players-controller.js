@@ -16,6 +16,22 @@ function PlayersController() {
         console.log(players)
         drawPlayers(players)
 }
+this.getPlayersByPosition = function (event) {
+    event.preventDefault()
+    var position = (event.target.position.value)
+    console.log(position)
+    var players = playersService.getPlayersByPosition(position)
+    console.log(players)
+    drawPlayers(players)
+}
+this.getPlayersByName = function (event) {
+    event.preventDefault()
+    var firstname = (event.target.firstname.value)
+    console.log(firstname)
+    var players = playersService.getPlayersByName(firstname)
+    console.log(players)
+    drawPlayers(players)
+}
 
 
     function drawPlayers(players) {
