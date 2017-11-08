@@ -1,17 +1,9 @@
 var PlayersService = function (endpointUri, callback) {
     var playersData = [];
+    var myTeam = [];
+   
 
-    // var filteredPlayers = playersData.filter(function (players) {
-    //     if (playersData.pro_team === "SF") {
-    //         return true;
-    //     }
-    // });
-
-
-    // function Player(firstname, position, pro_team)
-    //  this.firstname = firstname
-    //  this.position = position
-    //  this.pro_team = pro_team
+    
 
     this.getPlayersByTeam = function (teamName) {
         return playersData.filter(function (player) {
@@ -20,9 +12,6 @@ var PlayersService = function (endpointUri, callback) {
             }
         });
     }
-
-    
-
     this.getPlayersByPosition = function (position) {
         return playersData.filter(function (player) {
             if (player.position === position) {
@@ -30,7 +19,6 @@ var PlayersService = function (endpointUri, callback) {
             }
         });
     }
-
     this.getPlayersByName = function (firstname) {
         return playersData.filter(function (player) {
             if (player.firstname === firstname) {
@@ -38,19 +26,14 @@ var PlayersService = function (endpointUri, callback) {
             }
         });
     }
-
     this.addToMyTeam = function () {
-
+        
     }
 
     this.removeFromMyTeam = function () {
 
     }
-
     function loadPlayersData() {
-
-
-
         var localData = localStorage.getItem('playersData');
         if (localData) {
             playersData = JSON.parse(localData);

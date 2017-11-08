@@ -58,6 +58,53 @@ this.getPlayersByName = function (event) {
         playersElem.innerHTML = template
     }
 
+    function drawAdd(players) {
+        var playersElem = document.getElementById('playerRoster')
+        var template = ''
+        for (var i = 0; i < players.length; i++) {
+            var player = players[i];
+            template += `
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-body text-center">
+                            <img src="${player.photo}" class="img-responsive">
+                </div>
+            <h3>${player.firstname}</h3>
+            <h3>${player.pro_team}</h3>
+            <h6>${player.position}</h6>
+            <button type="submit" class"btn btn-default">Add</button>
+            </div>
+            </div>
+            </div>
+            `
+        }
+        playersElem.innerHTML = template
+    }
+
+    function drawRemove(players) {
+        var playersElem = document.getElementById('playerRoster')
+        var template = ''
+        for (var i = 0; i < players.length; i++) {
+            var player = players[i];
+            template += `
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-body text-center">
+                            <img src="${player.photo}" class="img-responsive">
+                </div>
+            <h3>${player.firstname}</h3>
+            <h3>${player.pro_team}</h3>
+            <h6>${player.position}</h6>
+            <button type="submit" class"btn btn-default">Add</button>
+            </div>
+            </div>
+            </div>
+            `
+        }
+        playersElem.innerHTML = template
+    }
     
 }
 
