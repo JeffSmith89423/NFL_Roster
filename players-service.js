@@ -10,6 +10,10 @@ var PlayersService = function (endpointUri, callback) {
             }
         });
     }
+    this.getMyTeam = function (){
+        debugger
+        return JSON.parse(JSON.stringify(myTeam))
+    }
     this.getPlayersByPosition = function (position) {
         return playersData.filter(function (player) {
             if (player.position === position) {

@@ -25,12 +25,16 @@ function PlayersController() {
         drawPlayers(players)
     }
     this.getPlayersByName = function (event) {
-        event.preventDefault()
+        // event.preventDefault()
         var firstname = (event.target.firstname.value)
         console.log(firstname)
         var players = playersService.getPlayersByName(firstname)
         console.log(players)
         drawPlayers(players)
+    }
+    this.getMyTeam = function (event) {
+var players = playersService.getMyTeam()
+drawMyTeam()
     }
 
 
@@ -59,10 +63,13 @@ function PlayersController() {
     }
 
     function drawMyTeam(players) {
-        var playersElem = document.getElementById('myTeam')
+        console.log("test")
+    //    var players = getMyPlayer()                           //add functionality here with a get my player function
+        var myPlayersElem = document.getElementById('myTeam')
+               
         var template = ''
-        for (var i = 0; i < players.length; i++) {
-            var player = players[i];
+        for (var i = 0; i < player.length; i++) {
+            var player = player[i];
             template += `
             <div class="col-md-3">
                 <div class="panel panel-info">
@@ -79,15 +86,19 @@ function PlayersController() {
             </div>
             `
         }
-        playersElem.innerHTML = template
+       console.log("test2")
+        myPlayersElem.innerHTML = template
+        console.log("test3")
     }
-    this.addPlayer = function addPlayer(id){
-        playersService.addPlayer(id)
-        drawMyTeam(id)
+    this.addPlayer = function addPlayer(id) {
+        var players = playersService.addPlayer(id)
+         playersService.addPlayer(id)
+        getmyplayers()
+        drawMyTeam()
     }
-    this.removePlayer = function removePlayer(id){
+    this.removePlayer = function removePlayer(id) {
         playersService.removePlayer(id)
-        drawPlayers(id)
+        drawPlayers()
     }
 
 
