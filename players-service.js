@@ -31,7 +31,7 @@ var PlayersService = function (endpointUri, callback) {
     this.addPlayer = function addPlayer(id) {
         for (var i = 0; i < playersData.length; i++) {
             var player = playersData[i];
-            if (player.id == id) {
+            if (player.id === id) {
                 myTeam.push(player)
             }
         }
